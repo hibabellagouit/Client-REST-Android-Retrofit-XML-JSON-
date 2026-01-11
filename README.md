@@ -3,7 +3,7 @@
 
 
 
-Application Android complète pour la gestion de comptes bancaires, développée en Kotlin avec une architecture moderne et des bonnes pratiques de développement. L'application communique avec une API REST et prend en charge les formats JSON et XML.
+Créer une application Android permettant de consommer un service REST pour gérer des comptes bancaires avec des fonctionnalités CRUD (Create, Read, Update, Delete). L'application utilisera Retrofit pour les appels API et RecyclerView pour l'affichage des données.
 
 ## 🌟 Fonctionnalités
 
