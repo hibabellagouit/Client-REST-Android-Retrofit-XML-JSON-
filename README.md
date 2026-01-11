@@ -1,4 +1,5 @@
-# 🏦 Application Android - Gestion de Comptes Bancaires
+# 🏦 TP 10 : Client REST Android Retrofit (XML & JSON)
+
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.8.0-blue.svg)](https://kotlinlang.org/)
 [![API](https://img.shields.io/badge/API-24%2B-brightgreen.svg)](https://developer.android.com/about/versions/nougat)
