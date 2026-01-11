@@ -34,13 +34,7 @@ Application Android complète pour la gestion de comptes bancaires, développée
 
 ## 🚀 Installation
 
-### Configuration initiale
 
-1. **Cloner le dépôt** :
-   ```bash
-   git clone https://github.com/votre-utilisateur/client-rest-android.git
-   cd client-rest-android
-   ```
 
 2. **Configurer l'environnement** :
    - Ouvrir le projet dans Android Studio
