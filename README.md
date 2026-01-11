@@ -13,6 +13,7 @@ Créer une application Android permettant de consommer un service REST pour gér
 - ** d'un compte : Ajouter un compte via le bouton flottant.
 - ** Modification d'un compte : Modifier les informations d'un compte existant.
 - ** Suppression d'un compte : Supprimer un compte à l'aide du bouton approprié.
+  
 
 ### Détails techniques
 
