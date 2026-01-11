@@ -6,187 +6,51 @@
 Créer une application Android permettant de consommer un service REST pour gérer des comptes bancaires avec des fonctionnalités CRUD (Create, Read, Update, Delete). L'application utilisera Retrofit pour les appels API et RecyclerView pour l'affichage des données.
 
 ## 🌟 Fonctionnalités
-
-### Fonctionnalités principales
-
-- ** Affichage des comptes : Vérifier que la liste des comptes s'affiche correctement.
-- ** d'un compte : Ajouter un compte via le bouton flottant.
-- ** Modification d'un compte : Modifier les informations d'un compte existant.
-- ** Suppression d'un compte : Supprimer un compte à l'aide du bouton approprié.
-  
-
-### Détails techniques
-
-- **Architecture** : MVVM (Model-View-ViewModel)
-- **Appels réseau** : Retrofit avec convertisseurs GSON et SimpleXML
-- **Base de données locale** : Room pour le cache des données
-- **Injection de dépendances** : Hilt pour une gestion propre des dépendances
-- **Tests unitaires** : JUnit, Mockito et Espresso
-
-## 🛠️ Prérequis techniques
-
-- Android Studio Flamingo (2022.2.1) ou version ultérieure
-- SDK Android 24 (Nougat) ou supérieur
-- JDK 17
-- Accès à un serveur REST fonctionnel
-- Accès à Internet pour les dépendances
-
-## 🚀 Installation
-
-
-
-2. **Configurer l'environnement** :
-   - Ouvrir le projet dans Android Studio
-   - Synchroniser le projet avec les fichiers Gradle
-   - Configurer le SDK Android dans `File > Project Structure`
-
-3. **Configurer l'API** :
-   - Modifier `local.properties` pour définir l'URL de base de l'API :
-     ```properties
-     API_BASE_URL="http://10.0.2.2:8082/"  # Pour émulateur
-     # API_BASE_URL="http://votre-ip:8082/"  # Pour appareil physique
-     ```
-
-### Structure du projet
-
-```
-app/
-├── src/
-│   ├── main/
+## Fonctionnalités
+- Liste des comptes bancaires
+- Ajout de nouveaux comptes
+- Modification des comptes existants
+- Suppression de comptes
+- Support des formats JSON et XML
+## Prérequis
+- Android Studio
+- SDK Android 24+
+- Serveur REST accessible
+## Installation
+1. Cloner le dépôt
+2. Ouvrir dans Android Studio
+3. Configurer l'URL de l'API dans `RetrofitClient.java`
+4. Exécuter l'application
+## Structure du projet
+- Client-REST-Android-Retrofit-XML-JSON/
+├── app/
+│   ├── src/main/
 │   │   ├── java/ma/projet/restclient/
-│   │   │   ├── data/
-│   │   │   │   ├── local/             # Couche d'accès aux données locales
-│   │   │   │   ├── remote/            # Couche d'accès aux données distantes
-│   │   │   │   └── repository/        # Implémentation des repositories
-│   │   │   ├── di/                    # Configuration de l'injection de dépendances
-│   │   │   ├── domain/                # Modèles de domaine et cas d'utilisation
-│   │   │   ├── ui/                    # Couche d'interface utilisateur
-│   │   │   │   ├── main/              # Écran principal
-│   │   │   │   └── viewmodel/         # ViewModels
-│   │   │   └── utils/                 # Utilitaires et extensions
-│   │   └── res/                       # Ressources Android
-│   └── test/                          # Tests unitaires
-└── build.gradle                       # Configuration du module
-```
-
-## 🔧 Configuration avancée
-
-### Variables d'environnement
-
-Créez un fichier `secrets.properties` à la racine du projet :
-
-```properties
-# Configuration de l'API
-API_BASE_URL="http://10.0.2.2:8082/"
-API_TIMEOUT=30
-
-# Configuration du cache
-CACHE_DURATION=3600  # en secondes
-```
-
-### Configuration de Retrofit
-
-```kotlin
-@Module
-@InstallIn(SingletonComponent::class)
-object NetworkModule {
-    @Provides
-    @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(BuildConfig.API_BASE_URL)
-            .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
-            .build()
-    }
-}
-```
-
-## 📚 Documentation de l'API
-
-### Endpoints
-
-| Méthode | Endpoint | Description | Format |
-|---------|----------|-------------|--------|
-| `GET`   | `/banque/comptes` | Liste des comptes | JSON/XML |
-| `GET`   | `/banque/comptes/{id}` | Détails d'un compte | JSON/XML |
-| `POST`  | `/banque/comptes` | Créer un compte | JSON |
-| `PUT`   | `/banque/comptes/{id}` | Mettre à jour un compte | JSON |
-| `DELETE`| `/banque/comptes/{id}` | Supprimer un compte | - |
-
-### Modèle de données
-
-**Compte**
-```json
-{
-  "id": 1,
-  "solde": 1500.75,
-  "type": "COURANT",
-  "dateCreation": "2025-01-11"
-}
-```
-
-## 🧪 Tests
-
-### Exécuter les tests
-
-```bash
-# Tous les tests
-./gradlew test
-
-# Tests unitaires uniquement
-./gradlew testDebugUnitTest
-
-# Tests d'interface utilisateur
-./gradlew connectedAndroidTest
-```
-
-### Couverture de code
-
-Générer un rapport de couverture :
-```bash
-./gradlew jacocoTestReport
-```
-
-## 📦 Dépendances
-
-### Principales dépendances
-
-- **AndroidX** : `androidx.core:core-ktx:1.10.0`
-- **Material Design** : `com.google.android.material:material:1.9.0`
-- **Retrofit** : `com.squareup.retrofit2:retrofit:2.9.0`
-- **Room** : `androidx.room:room-runtime:2.5.0`
-- **Hilt** : `com.google.dagger:hilt-android:2.45`
-- **Coroutines** : `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4`
-- **Navigation** : `androidx.navigation:navigation-fragment-ktx:2.5.3`
-
-### Dépendances de développement
-
-- **LeakCanary** : `com.squareup.leakcanary:leakcanary-android:2.10`
-- **Chucker** : `com.github.chuckerteam.chucker:library:3.5.2`
-- **Timber** : `com.jakewharton.timber:timber:5.0.1`
-
-## 📝 Licence
-
-```
-MIT License
-
-Copyright (c) 2025 Votre Nom
-
-Permission is hereby granted...
-```
-
-## 🤝 Contribution
-
-Les contributions sont les bienvenues ! Voici comment contribuer :
-
-1. Forkez le projet
-2. Créez votre branche (`git checkout -b feature/AmazingFeature`)
-3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
-4. Poussez vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrez une Pull Request
-
+│   │   │   ├── MainActivity.java            # Activité principale
+│   │   │   ├── adapter/
+│   │   │   │   └── CompteAdapter.java       # Adaptateur pour RecyclerView
+│   │   │   ├── api/                         # Interface Retrofit
+│   │   │   ├── config/                      # Configuration
+│   │   │   ├── entities/                    # Entités
+│   │   │   │   ├── Compte.java
+│   │   │   │   └── CompteList.java
+│   │   │   └── repository/
+│   │   │       └── CompteRepository.java    # Gestion des appels API
+│   │   └── res/
+│   │       ├── layout/
+│   │       │   ├── activity_main.xml        # Layout principal
+│   │       │   ├── item_compte.xml          # Item de liste
+│   │       │   └── dialog_add_compte.xml    # Boîte de dialogue
+│   │       └── xml/
+│   │           └── network_security_config.xml
+│   └── build.gradle
+└── README.md
+## Technologies utilisées
+- Android
+- Retrofit 2
+- Gson
+- XML
+- Material Design
 
 #
 
