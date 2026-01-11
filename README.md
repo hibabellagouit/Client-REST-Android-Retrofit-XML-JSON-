@@ -9,11 +9,10 @@ Créer une application Android permettant de consommer un service REST pour gér
 
 ### Fonctionnalités principales
 
-- **Gestion des comptes** : CRUD complet (Créer, Lire, Mettre à jour, Supprimer)
-- **Support multi-format** : Affichage en JSON ou XML selon la préférence
-- **Interface utilisateur intuitive** : Conçue avec Material Design 3
-- **Gestion hors ligne** : Cache des données pour une meilleure expérience utilisateur
-- **Sécurité** : Gestion sécurisée des données sensibles
+- ** Affichage des comptes : Vérifier que la liste des comptes s'affiche correctement.
+- ** d'un compte : Ajouter un compte via le bouton flottant.
+- ** Modification d'un compte : Modifier les informations d'un compte existant.
+- ** Suppression d'un compte : Supprimer un compte à l'aide du bouton approprié.
 
 ### Détails techniques
 
