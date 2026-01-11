@@ -192,17 +192,6 @@ Les contributions sont les bienvenues ! Voici comment contribuer :
 
 Pour toute question ou problème, veuillez ouvrir une issue sur GitHub.
 
-## 📱 Captures d'écran
-
-| Écran principal | Ajout de compte | Détails |
-|----------------|-----------------|---------|
-| ![Main Screen](screenshots/main.png) | ![Add Account](screenshots/add.png) | ![Details](screenshots/details.png) |
-
-## 📈 Métriques
-
-- **Taille de l'APK** : ~3.2 MB
-- **Temps de compilation** : ~45s (premier build)
-- **Taille du code** : ~2500 lignes de Kotlin
 
 ## 🔄 Workflow CI/CD
 
