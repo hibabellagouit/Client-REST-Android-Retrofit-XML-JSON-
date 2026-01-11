@@ -187,28 +187,10 @@ Les contributions sont les bienvenues ! Voici comment contribuer :
 4. Poussez vers la branche (`git push origin feature/AmazingFeature`)
 5. Ouvrez une Pull Request
 
-## 📞 Support
 
-Pour toute question ou problème, veuillez ouvrir une issue sur GitHub.
-
-
-## 🔄 Workflow CI/CD
-
-Le projet utilise GitHub Actions pour :
-- Exécution des tests à chaque push
-- Vérification du format de code avec ktlint
-- Déploiement automatique sur Firebase App Distribution
-
-## 📚 Ressources
-
-- [Documentation Android](https://developer.android.com/docs)
-- [Guide Retrofit](https://square.github.io/retrofit/)
-- [Documentation Room](https://developer.android.com/training/data-storage/room)
-- [Guide Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+#
 
 ---
 
-<div align="center">
-  Fait avec ❤️ par Votre Nom - 2025
-</div>
+
 
